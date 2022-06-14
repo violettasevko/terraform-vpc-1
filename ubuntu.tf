@@ -12,6 +12,5 @@ resource "aws_instance" "ubuntu-arm64" {
 
     tags = {
         Name = "ubuntu-arm64"
-        owner = "violetta"
     }
 }

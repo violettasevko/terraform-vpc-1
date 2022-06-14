@@ -13,6 +13,5 @@ resource "aws_instance" "al-arm64" {
     
     tags = {
         Name = "al-arm64"
-        owner = "violetta"        
     }
 }

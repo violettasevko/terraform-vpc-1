@@ -1,5 +1,10 @@
 provider "aws" {
     region = var.AWS_Region
+
+    default_tags {
+      owner = "violetta"
+      environment = "test"
+    }
 }
 
 resource "aws_vpc" "vpc" {
@@ -8,7 +13,6 @@ resource "aws_vpc" "vpc" {
 
   tags = {
     Name = "vpc"
-    owner = "violetta"
   }
 }
 
@@ -27,7 +31,6 @@ resource "aws_subnet" "subnet_public" {
 
     tags = {
         Name = "subnet-public-${each.value}"
-        owner = "violetta"
     }
 }
 
@@ -43,7 +46,6 @@ resource "aws_subnet" "subnet_private" {
 
     tags = {
         Name = "subnet-private-${each.value}"
-        owner = "violetta"
     }
 }
 
@@ -51,7 +53,6 @@ resource "aws_internet_gateway" "igw" {
     vpc_id = "${aws_vpc.vpc.id}"
     tags = {
         Name = "igw"
-        owner = "violetta"
     }
 }
 
@@ -67,7 +68,6 @@ resource "aws_route_table" "public-rt" {
     
     tags = {
         Name = "public-rt"
-        owner = "violetta"
     }
 }
 
@@ -149,7 +149,6 @@ resource "aws_security_group" "webserver" {
     }
     tags = {
         Name = "webserver"
-        owner = "violetta"
     }
 }
 
