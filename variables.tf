@@ -1,13 +1,13 @@
 variable "AMI1" {
     type = map
     default = {
-        al-arm64 = "ami-0adfc82c1ad9f327b"
-        ubuntu-arm64 = "ami-0d7beeabef1d43e86"
+        al-arm64 = "ami-0ceb85bb30095410b"
+        ubuntu-arm64 = "ami-07f16fb14274bfc76"
     }
 }
 
 variable "AWS_Region" {
-    default = "eu-north-1"
+    default = "eu-central-1"
 }
 
 variable "instance_type" {
@@ -15,17 +15,17 @@ variable "instance_type" {
 }
 
 variable "vpc_cidr_block" {
-    default = "10.10.0.0/16"
+    default = "10.60.0.0/16"
 }
 
 variable "availability_zones" {
     default = {
-        eu-north-1a = 1
-        eu-north-1b = 2
-        eu-north-1c = 3
+        eu-central-1a = 1
+        eu-central-1b = 2
+        eu-central-1c = 3
     }
 }
 
 variable "web_key_name" {
-    default = "lunakey"
+    default = "key123"
 }
